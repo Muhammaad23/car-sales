@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="top-bar">
+            <div class="logo">
+                <h1>avtoelon.uz</h1>
+            </div>
+            <div class="nav_link">
+                <ul>
+                    <li><a href="#">Avtomobillar</a></li>
+                    <li><a href="#">Ehtiyot qismlari</a></li>
+                    <li><a href="#">Maxsus texnika</a></li>
+                    <li><a href="#">Yangiliklar</a></li>
+                </ul>
+            </div>
+            <div class="user-options">
+                <a href="#">Mening e'lonlarim</a>
+                <button class="sell-btn">+ Sotish</button>
+            </div>
+        </div>
+    </nav>
+    <h2>UZ avto bozor savdosi bo'yicha yonayotgan takliflar</h2>
+        <ul>
+            {% for product in products %}
+            <div class="car">
+                {% if product.image %}
+                    <p>
+                        <img class="product_images" src="{{ product.image.url }}" alt="{{ product.title }}">
+                    </p>
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+                <div class="product_title">
+                <h3>{{ product.title }}</h3>
+                <p>Description: {{ product.description }}</p>
+                <p>Narxi: ${{ product.price }}</p>
+                <p>Chegirma foizi: {{ product.discount_percent }}%</p>
+                <p>Stock Count: {{ product.count }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+</body>
+<script src="{% static 'js/script.js' %}"></script>
+</html>
