@@ -9,15 +9,10 @@ body{
 .top-bar {
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
+    padding: 5px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-nav h1 {
-    font-size: 1.5rem;
-    color: #333;
 }
 
 .nav_link ul {
@@ -26,13 +21,18 @@ nav h1 {
     gap: 20px;
 }
 
-.nav_link ul li {
+.nav_link li {
     display: inline;
 }
 
 .nav_link ul li a {
     text-decoration: none;
     color: #1c1c1d;
+}
+
+.car_logo{
+    width: auto;
+    height: 70px;
 }
 
 .user-options {
@@ -48,6 +48,7 @@ nav h1 {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .car{
@@ -58,13 +59,16 @@ nav h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     text-align: center; 
     margin-right: 20px;
+    margin-bottom: 20px;
     }
-    .product_title {
-    margin: 20px 0; 
-}
 
-ul{
-    display: flex;
+.product_car{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: var(--gap);
+    -moz-column-gap: var(--gap-md);
+    column-gap: var(--gap-md);
+    margin-left: 20px;
 }
 
 .product_title p{

@@ -7,4 +7,4 @@ class Product(models.Model):
     discount_percent = models.PositiveSmallIntegerField(verbose_name="Chegirma foizi")
     is_active = models.BooleanField(default=True)
     image = models.ImageField(upload_to="product_images/", blank=True, null=True)
-    count = models.PositiveIntegerField()
+    county = models.CharField(max_length=100, verbose_name="County")

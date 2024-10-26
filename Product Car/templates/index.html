@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Product List</title>
+    <title>AVTO</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <nav>
         <div class="top-bar">
-            <div class="logo">
-                <h1>avtoelon.uz</h1>
+            <div>
+                <img class="car_logo" src="{% static 'img/logo.png' %}" alt="uz">
             </div>
             <div class="nav_link">
                 <ul>
@@ -22,12 +22,12 @@
             </div>
             <div class="user-options">
                 <a href="#">Mening e'lonlarim</a>
-                <button class="sell-btn">+ Sotish</button>
+                <a  class="sell-btn" href="{% url 'product_create' %}">+ Sotish</a>
             </div>
         </div>
     </nav>
     <h2>UZ avto bozor savdosi bo'yicha yonayotgan takliflar</h2>
-        <ul>
+        <div class="product_car">
             {% for product in products %}
             <div class="car">
                 {% if product.image %}
@@ -42,11 +42,11 @@
                 <p>Description: {{ product.description }}</p>
                 <p>Narxi: ${{ product.price }}</p>
                 <p>Chegirma foizi: {{ product.discount_percent }}%</p>
-                <p>Stock Count: {{ product.count }}</p>
+                <p>Mamlakat: {{ product.county }}</p>
                 </div>
             </div>
         {% endfor %}
-    </ul>
+    </div>
 </body>
 <script src="{% static 'js/script.js' %}"></script>
 </html>
